@@ -63,7 +63,7 @@ public class NastySurprise implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		
 		if(e.getSource() == button) {
-			showPictureFromTheInternet("https://www.rd.com/wp-content/uploads/2021/03/GettyImages-1133605325-scaled-e1617227898456.jpg?fit=696%2C463");
+			showPictureFromTheInternet("https://wallpapers.com/images/featured/cute-puppy-i85e6c4pqelymxsw.jpg");
 		}
 		else {
 			showPictureFromTheInternet("https://i.pinimg.com/550x/ae/15/81/ae1581886e3f7a26969fcf1b5c5f7554.jpg");
