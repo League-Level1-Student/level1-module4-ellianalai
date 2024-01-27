@@ -9,6 +9,6 @@ public class FortuneTellerRunner {
 
     static void begin() {
         // Welcome the user. Give them a hint for the secret location.
-
+    	System.out.println("Hi. You shall find the location in the most basic place");
     }
 }
