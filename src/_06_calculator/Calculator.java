@@ -58,7 +58,7 @@ public class Calculator implements ActionListener{
 		
 		
 			String t = text.getText();
-			String te = text.getText();
+			String te = text2.getText();
 			int i = Integer.parseInt(t);
 			int in = Integer.parseInt(te);
 			
