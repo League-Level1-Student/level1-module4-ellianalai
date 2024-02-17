@@ -1,31 +1,55 @@
 package _10_slot_machine;
 
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Random;
 
+import javax.swing.BoxLayout;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class SlotMachine {
+public class SlotMachine implements ActionListener{
 
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
 	JPanel panel2 = new JPanel();
 	JPanel panel3 = new JPanel();
 	JButton button = new JButton();
-
+	Random ran = new Random();
+	
+	String [] images = {
+			"banana.png",
+			"cherry.png",
+			"Diamond.png",
+			"grape.png",
+			"lemon.png",
+			"orange.png",
+			"seven.png",
+			"strawberry.png",
+			"watermelon.png"
+	};
 	void slot() {
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.add(panel);
+		frame.add(panel3);
+		panel3.add(panel);
+		panel3.add(panel2);
 		panel.add(createLabelImage("banana.png"));
 		panel.add(createLabelImage("diamond.png"));
 		panel.add(createLabelImage("cherry.png"));
-		
+		panel2.add(button);
+		button.setText("Spin");
+		button.setSize(200, 10);
+		button.addActionListener(this);
+		panel3.setLayout(new BoxLayout(panel3, BoxLayout.Y_AXIS));
 		frame.pack();
 	}
 
@@ -40,6 +64,23 @@ public class SlotMachine {
 		Icon icon = new ImageIcon(imageURL);
 		JLabel imageLabel = new JLabel(icon);
 		return imageLabel;
+	}
+
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		panel.removeAll();
+		panel.add(createLabelImage(images[ran.nextInt(8)]));
+		panel.add(createLabelImage(images[ran.nextInt(8)]));
+		panel.add(createLabelImage(images[ran.nextInt(8)]));
+		
+		if() {
+			JOptionPane.showMessageDialog(null, "You Win!");
+		}
+		frame.pack();
+		
+		
 	}
 
 }

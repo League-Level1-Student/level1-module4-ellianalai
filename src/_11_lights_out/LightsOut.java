@@ -29,7 +29,7 @@ public class LightsOut implements MouseListener {
 
 		/** PART 1. CREATE YOUR LIGHT BOARD **/
 		//1. Make your gamePanel a 5x5 grid with setLayout(new GridLayout(5, 5));
-		setLayout(new GridLayout(5, 5));
+		gamePanel.setLayout(new GridLayout(5,5));
 		
 			//2. Add 25 JLabels to your gamePanel (these are your lights)
 			for(int i =0;i<25;i++) {
@@ -41,7 +41,7 @@ public class LightsOut implements MouseListener {
 				light.addMouseListener(this);
 			}
 			//3. Use setText() to add a position number to each light (0-24).
-
+			
 			//4. Set the background of each light to LIGHT_GRAY
 			// - you will also have to set the background to opaque.
 			// - Use light.setOpaque(true);
@@ -61,7 +61,7 @@ public class LightsOut implements MouseListener {
 		// 1. Get the light that was clicked on `(JLabel) e.getSource`
 		JLabel clicked = (JLabel) e.getSource();
 		// 2. Get the number (position) of the light
-		getLightAtPosition();
+		getLightAtPosition(i);
 		// 3. Now use the makeMove method to code which lights turn on and off.
 
 		// 4.Check if the player has won (e.g. all the lights are off)
