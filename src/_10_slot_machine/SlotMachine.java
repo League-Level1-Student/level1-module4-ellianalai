@@ -24,6 +24,8 @@ public class SlotMachine implements ActionListener{
 	JPanel panel3 = new JPanel();
 	JButton button = new JButton();
 	Random ran = new Random();
+	int score;
+	
 	
 	String [] images = {
 			"banana.png",
@@ -71,12 +73,23 @@ public class SlotMachine implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		panel.removeAll();
-		panel.add(createLabelImage(images[ran.nextInt(8)]));
-		panel.add(createLabelImage(images[ran.nextInt(8)]));
-		panel.add(createLabelImage(images[ran.nextInt(8)]));
+		String s = images[ran.nextInt(8)];
+		String t = images[ran.nextInt(8)];
+		String v = images[ran.nextInt(8)];
+		panel.add(createLabelImage(s));
+		panel.add(createLabelImage(t));
+		panel.add(createLabelImage(v));
 		
-		if() {
+		if(s.equals(t) && s.equals(v) && t.equals(v)) {
 			JOptionPane.showMessageDialog(null, "You Win!");
+			score+=1;
+			if(score == 1) {
+				System.out.println("You have won " + score + " time");
+			}
+			else {
+				System.out.println("You have won " + score + " times");
+			}
+			
 		}
 		frame.pack();
 		
