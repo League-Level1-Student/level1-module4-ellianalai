@@ -37,6 +37,7 @@ public class LightsOut implements MouseListener {
 		gamePanel.setLayout(new GridLayout(5,5));
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
 		int random = ran.nextInt(24);
 		//2. Add 25 JLabels to your gamePanel (these are your lights)
 		for(int i =0;i<25;i++) {
